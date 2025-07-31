@@ -229,10 +229,17 @@ import Footer from '../components/Footer.astro';
         transform: translateY(-100%);
         transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
         padding: 0 48px;
+        /* Ocultar por defecto para evitar flash */
+        visibility: hidden;
+        opacity: 0;
     }
+    
     .mobile-nav.is-open {
         transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
     }
+
 
     .mobile-nav-link {
         color: var(--color-bg);
