@@ -1,0 +1,185 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+    {
+        title: "Workshop Floral",
+        services: "Un espacio para crear, explorar y jugar con las flores en un lugar hermoso: @chiringuito_tulum.",
+        description: "No necesitas experiencia. Solo curiosidad y tu florero favorito. Aquí aprenderás lo esencial de la composición floral y cómo darle vida a tus ideas. Flores, creatividad y un mar de inspiración.",
+        imageUrl: "/images/messa-2.jpg"
+    },
+    {
+        title: "Mesas y Flores",
+        services: "Diseño Floral para Espacios Gastronómicos",
+        description: "Transformamos espacios culinarios en experiencias sensoriales completas. Cada mesa es una composición única que complementa la gastronomía y eleva la experiencia del comensal.",
+        imageUrl: "/images/mesa-4.jpg"
+    },
+    {
+        title: "Editorial para Revista Bloom",
+        services: "Dirección de Arte y Diseño Floral",
+        description: "Conceptos florales vanguardistas creados para fotografía, explorando el color, la forma y la textura como elementos de una narrativa visual.",
+        imageUrl: "/images/mesa-3.jpg"
+    },
+    {
+        title: "Evento Corporativo Hotel Bardó",
+        services: "Ambientación Floral para Eventos de Alto Impacto",
+        description: "Una instalación floral que redefine el lujo corporativo. Creamos atmósferas sofisticadas que transforman espacios empresariales en experiencias memorables y elegantes.",
+        imageUrl: "/images/messa-1.jpg"
+    }
+];
+---
+<Layout>
+    <main>
+        <section class="hero fade-in">
+            <div class="hero-video-container">
+                <video autoplay muted loop playsinline webkit-playsinline preload="metadata">
+                    <source src="/video/messa-hero.mp4" type="video/mp4">
+                </video>
+                <!-- Fallback separado del video -->
+                <div class="hero-image-placeholder"></div>
+            </div>
+            <!-- Texto del hero comentado temporalmente
+            <div class="container">
+                <h1>ARTE FLORAL QUE TRANSFORMA ESPACIOS</h1>
+            </div>
+            -->
+        </section>
+
+        <section class="intro section fade-in">
+            <div class="container">
+                <h2 class="intro-title">Arte floral que transforma espacios</h2>
+                <p class="intro-text">Las flores son nuestro lenguaje. Cada composición es una declaración que transforma atmósferas y construye recuerdos que perduran.</p>
+            </div>
+        </section>
+
+        <section id="proyectos" class="section fade-in">
+            <div class="container">
+                <h2 style="text-align: center;">Nuestro Trabajo</h2>
+                <p class="projects-intro">Cada proyecto es una historia única.</p>
+                <div class="project-list">
+                    {projects.map(project => (
+                        <div class="project-item-wrapper">
+                            <div class="project-item">
+                                <div class="project-image">
+                                    <img src={project.imageUrl} alt={`Proyecto: ${project.title}`} loading="lazy">
+                                </div>
+                                <div class="project-info">
+                                    <h3>{project.title}</h3>
+                                    <p class="services">{project.services}</p>
+                                    <p>{project.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="transition-section section fade-in">
+            <div class="container">
+                <h2 class="transition-title">Cada proyecto es una declaración</h2>
+                <p class="transition-text">Construimos experiencias que transforman espacios y crean recuerdos que perduran.</p>
+            </div>
+        </section>
+
+        <section id="sobre" class="section fade-in">
+            <div class="container">
+                <h2>Nuestro Enfoque</h2>
+                <div class="about-content">
+                    <p><strong>El Proceso.</strong> Cada proyecto nace de una conversación. Escuchamos, observamos y sentimos el espacio. La intuición y el respeto por el material guían nuestra mano.</p>
+                    <p><strong>El Alma.</strong> Julián Montoya lidera cada proyecto buscando el equilibrio entre lo audaz y lo delicado, lo estructural y lo salvaje. Cada creación cuenta una historia auténtica.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    .intro-title {
+        font-size: 56px;
+        font-weight: var(--font-weight-bold);
+        text-align: center;
+        margin-bottom: 32px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    .intro-text {
+        font-size: 22px;
+        line-height: 1.6;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+        opacity: 0.9;
+    }
+
+    .projects-intro {
+        font-size: 18px;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 64px auto;
+        opacity: 0.8;
+        font-style: italic;
+    }
+
+    .transition-section {
+        background-color: var(--color-accent);
+        color: var(--color-bg);
+        text-align: center;
+        padding: 120px 0;
+    }
+
+    .transition-title {
+        font-size: 48px;
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 32px;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+    }
+
+    .transition-text {
+        font-size: 22px;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0.95;
+    }
+
+    .project-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 80px;
+    }
+
+    .project-item {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        align-items: center;
+    }
+
+    @media (min-width: 769px) {
+        .project-list {
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+        }
+
+        .project-item-wrapper:nth-child(even) .project-image {
+            order: 2;
+        }
+    }
+
+    .project-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .project-info h3 {
+        margin-bottom: 8px;
+    }
+    .project-info .services {
+        font-style: italic;
+        opacity: 0.8;
+        margin-bottom: 16px;
+    }
+</style>

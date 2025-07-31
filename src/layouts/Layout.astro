@@ -1,0 +1,459 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Messa Studio - Arte floral que transforma espacios. Diseño floral para eventos, restaurantes y espacios corporativos.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Messa Studio">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <title>Messa Studio - Arte Floral y Ambientación</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://messa.studio/">
+    <meta property="og:title" content="Messa Studio - Arte Floral y Ambientación">
+    <meta property="og:description" content="Arte floral que transforma espacios. Diseño floral para eventos, restaurantes y espacios corporativos.">
+    <meta property="og:image" content="https://messa.studio/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://messa.studio/">
+    <meta property="twitter:title" content="Messa Studio - Arte Floral y Ambientación">
+    <meta property="twitter:description" content="Arte floral que transforma espacios. Diseño floral para eventos, restaurantes y espacios corporativos.">
+    <meta property="twitter:image" content="https://messa.studio/og-image.jpg">
+    
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,400&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <Header />
+    <slot />
+    <Footer />
+</body>
+</html>
+
+<style is:global>
+    :root {
+        --color-bg: #F5F1E6;
+        --color-text: #222222;
+        --color-accent: #B5342C;
+        --font-main: 'Satoshi', sans-serif;
+        --font-h1: 64px;
+        --font-h2: 40px;
+        --font-h3: 28px;
+        --font-body: 17px;
+        --font-weight-bold: 700;
+        --font-weight-regular: 400;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+    }
+
+    body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-main);
+        font-size: var(--font-body);
+        font-weight: var(--font-weight-regular);
+        line-height: 1.6;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    h1 {
+        font-size: var(--font-h1);
+        font-weight: var(--font-weight-bold);
+        line-height: 1.1;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+    }
+
+    h2 {
+        font-size: 44px;
+        font-weight: var(--font-weight-bold);
+        line-height: 1.2;
+        margin: 0 0 48px 0;
+        letter-spacing: -0.01em;
+    }
+
+    h3 {
+        font-size: var(--font-h3);
+        font-weight: var(--font-weight-bold);
+        line-height: 1.3;
+        margin: 0;
+    }
+
+    h4, h5, h6 {
+        font-size: var(--font-body);
+        font-weight: var(--font-weight-regular);
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    a {
+        color: var(--color-text);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    
+    a:hover {
+        color: var(--color-accent);
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    button, .btn {
+        transition: all 0.2s ease;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        position: relative;
+        z-index: 1002;
+    }
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    
+    .header-logo img {
+        height: 80px;
+        width: auto;
+        max-width: 350px;
+        object-fit: contain;
+        transition: opacity 0.2s ease;
+    }
+    
+    .header-logo:hover img {
+        opacity: 0.8;
+    }
+
+    .header-nav a {
+        margin-left: 32px;
+    }
+
+    .header-burger-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+        position: relative;
+        width: 28px;
+        height: 28px;
+    }
+    .header-burger-btn span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--color-text);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        position: absolute;
+        left: 0;
+    }
+    .header-burger-btn span:nth-child(1) {
+        top: 6px;
+    }
+    .header-burger-btn span:nth-child(2) {
+        top: 18px;
+    }
+    .header-burger-btn.is-active span {
+        background-color: var(--color-bg);
+    }
+    .header-burger-btn.is-active span:nth-child(1) {
+        transform: translateY(7px) rotate(135deg);
+    }
+    .header-burger-btn.is-active span:nth-child(2) {
+        transform: translateY(-7px) rotate(-135deg);
+    }
+
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-accent);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        z-index: 1000;
+        transform: translateY(-100%);
+        transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        padding: 0 48px;
+    }
+    .mobile-nav.is-open {
+        transform: translateY(0);
+    }
+
+    .mobile-nav-link {
+        color: var(--color-bg);
+        text-decoration: none;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 16px 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .mobile-nav-link:hover {
+        color: var(--color-bg);
+        opacity: 0.8;
+    }
+
+    .hero {
+        position: relative;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .hero-video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .hero-video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        /* Para videos verticales, centrar mejor */
+        object-position: center 25%;
+    }
+
+    /* Ocultar fallback cuando el video está disponible */
+    .hero-video-container video:not([paused]) + .hero-image-placeholder {
+        display: none;
+    }
+
+    .hero-image-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/img/messa-hero.jpg');
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+    .hero-image-placeholder::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0, 0.2);
+    }
+
+    .hero h1,
+    #sobre,
+    #contacto {
+        text-align: center;
+    }
+
+    .project-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 80px;
+    }
+
+    @media (min-width: 769px) {
+        .project-list {
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+        }
+    }
+
+    .about-content p {
+        max-width: 650px;
+        margin: 0 auto 24px auto;
+    }
+
+    @media (max-width: 768px) {
+        .section {
+            padding: 60px 0;
+        }
+
+        .header-nav {
+            display: none;
+        }
+        .header-burger-btn {
+            display: block;
+        }
+        .header-logo img {
+            height: 55px;
+            max-width: 220px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            letter-spacing: -0.01em;
+        }
+        h2 {
+            font-size: 36px;
+        }
+        h3 {
+            font-size: 24px;
+        }
+
+        .hero {
+            height: 60vh;
+            margin-top: 0;
+        }
+        .project-item, 
+        .project-item:nth-child(even) {
+            grid-template-columns: 1fr;
+            direction: ltr;
+            gap: 24px;
+        }
+        .project-info {
+            text-align: left;
+        }
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(element => {
+        observer.observe(element);
+    });
+
+    const burgerBtn = document.querySelector('.header-burger-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    if (burgerBtn && mobileNav) {
+        const toggleMenu = () => {
+            burgerBtn.classList.toggle('is-active');
+            mobileNav.classList.toggle('is-open');
+        };
+
+        burgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileNav.classList.contains('is-open')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        mobileNav.addEventListener('click', (e) => {
+            if (e.target === mobileNav) {
+                toggleMenu();
+            }
+        });
+    }
+
+    // Forzar autoplay del video hero (más agresivo para Safari)
+    const heroVideo = document.querySelector('.hero-video-container video');
+    if (heroVideo) {
+        console.log('Video encontrado:', heroVideo);
+        
+        // Forzar autoplay inmediatamente
+        heroVideo.play().catch(function(error) {
+            console.log('Primer intento falló:', error);
+            
+            // Segundo intento después de un delay
+            setTimeout(() => {
+                heroVideo.play().catch(function(error2) {
+                    console.log('Segundo intento falló:', error2);
+                    
+                    // Tercer intento con user interaction
+                    document.addEventListener('click', function() {
+                        heroVideo.play();
+                    }, { once: true });
+                });
+            }, 100);
+        });
+        
+        // También intentar en cualquier interacción del usuario
+        document.addEventListener('click', function() {
+            if (heroVideo.paused) {
+                heroVideo.play();
+            }
+        });
+        
+        document.addEventListener('touchstart', function() {
+            if (heroVideo.paused) {
+                heroVideo.play();
+            }
+        });
+    } else {
+        console.log('No se encontró el video');
+    }
+});
+</script>
+
+        

@@ -1,0 +1,133 @@
+<footer class="footer section" id="contacto">
+    <div class="container footer-container">
+        <div class="footer-hero">
+            <h2 class="footer-title">¿Listo para transformar tu espacio?</h2>
+            <p class="footer-subtitle">Cada proyecto comienza con una conversación. Hablemos sobre cómo podemos crear algo extraordinario juntos.</p>
+            <a href="mailto:hola@messa.studio" class="footer-cta">hola@messa.studio</a>
+        </div>
+        <div class="footer-links">
+            <div class="footer-nav">
+                <p class="footer-section-title">Navegación</p>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#sobre">Sobre Messa</a>
+                <a href="mailto:hola@messa.studio">hola@messa.studio</a>
+            </div>
+            <div class="footer-social">
+                <p class="footer-section-title">Conecta</p>
+                <a href="https://www.instagram.com/messa.j.m/" target="_blank" rel="noopener">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>© Messa Studio 2025</p>
+            <p class="footer-credit">with love by Nicolas Jofre</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        padding: 80px 0 48px 0;
+        background-color: var(--color-bg);
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 80px;
+        align-items: start;
+    }
+    
+    .footer-hero {
+        max-width: 600px;
+    }
+    
+    .footer-title {
+        font-size: 36px;
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 24px;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+    }
+    
+    .footer-subtitle {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 32px;
+        opacity: 0.8;
+    }
+    
+    .footer-cta {
+        font-size: 24px;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-accent);
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+    }
+    
+    .footer-cta:hover {
+        opacity: 0.8;
+    }
+    
+    .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+    }
+    
+    .footer-section-title {
+        font-weight: var(--font-weight-bold);
+        margin-bottom: 16px;
+        font-size: 16px;
+    }
+    
+    .footer-nav a,
+    .footer-social a {
+        display: block;
+        margin-bottom: 12px;
+        transition: color 0.2s ease;
+    }
+    
+    .footer-nav a:hover,
+    .footer-social a:hover {
+        color: var(--color-accent);
+    }
+    
+    .footer-copy {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-top: 64px;
+        font-size: 14px;
+        opacity: 0.6;
+        padding-top: 32px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .footer-credit {
+        margin-top: 8px;
+        font-size: 13px;
+        opacity: 0.7;
+        font-weight: var(--font-weight-regular);
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+            gap: 48px;
+            text-align: center;
+        }
+        
+        .footer-title {
+            font-size: 28px;
+        }
+        
+        .footer-cta {
+            font-size: 20px;
+        }
+        
+        .footer-links {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+    }
+</style> 
