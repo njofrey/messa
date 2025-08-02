@@ -3,17 +3,20 @@
         <div class="footer-hero">
             <h2 class="footer-title">¿Listo para transformar tu espacio?</h2>
             <p class="footer-subtitle">Cada proyecto comienza con una conversación. Hablemos sobre cómo podemos crear algo extraordinario juntos.</p>
-            <a href="mailto:hola@messa.studio" class="footer-cta">hola@messa.studio</a>
+            <div class="footer-contact-links">
+                <a href="https://wa.me/+529842105851" target="_blank" rel="noopener" class="footer-cta">WhatsApp</a>
+                <a href="https://www.instagram.com/messa.j.m/" target="_blank" rel="noopener" class="footer-cta">Instagram</a>
+            </div>
         </div>
         <div class="footer-links">
             <div class="footer-nav">
                 <p class="footer-section-title">Navegación</p>
                 <a href="#proyectos">Proyectos</a>
                 <a href="#sobre">Sobre Messa</a>
-                <a href="mailto:hola@messa.studio">hola@messa.studio</a>
             </div>
             <div class="footer-social">
-                <p class="footer-section-title">Conecta</p>
+                <p class="footer-section-title">Contacto</p>
+                <a href="https://wa.me/+529842105851" target="_blank" rel="noopener">WhatsApp</a>
                 <a href="https://www.instagram.com/messa.j.m/" target="_blank" rel="noopener">Instagram</a>
             </div>
         </div>
@@ -67,6 +70,16 @@
     
     .footer-cta:hover {
         opacity: 0.8;
+    }
+    
+    .footer-contact-links {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-contact-links .footer-cta {
+        font-size: 20px;
     }
     
     .footer-links {
@@ -128,6 +141,24 @@
         .footer-links {
             grid-template-columns: 1fr;
             gap: 32px;
+        }
+        
+        .footer-contact-links {
+            justify-content: center;
+            gap: 16px;
+        }
+        
+        .footer-contact-links .footer-cta {
+            font-size: 18px;
+        }
+        
+        .footer-contact-links {
+            justify-content: center;
+            gap: 16px;
+        }
+        
+        .footer-contact-links .footer-cta {
+            font-size: 18px;
         }
     }
 </style> 
