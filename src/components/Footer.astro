@@ -78,24 +78,19 @@
         gap: 24px;
         flex-wrap: wrap;
         margin-top: 16px;
+        justify-content: center;
     }
     
     .footer-contact-links .footer-cta {
         font-size: 20px;
-        padding: 12px 24px;
-        border: 2px solid var(--color-accent);
-        border-radius: 6px;
-        transition: all 0.2s ease;
-        display: inline-block;
         font-weight: var(--font-weight-bold);
-        text-align: center;
-        min-width: 120px;
+        color: var(--color-accent);
+        text-decoration: none;
+        transition: opacity 0.2s ease;
     }
     
     .footer-contact-links .footer-cta:hover {
-        background-color: var(--color-accent);
-        color: var(--color-bg);
-        transform: translateY(-2px);
+        opacity: 0.8;
     }
     
     .footer-links {
