@@ -35,14 +35,8 @@ const projects = [
                 <video autoplay muted loop playsinline webkit-playsinline preload="metadata">
                     <source src="/video/messa-hero.mp4" type="video/mp4">
                 </video>
-                <!-- Fallback separado del video -->
-                <div class="hero-image-placeholder"></div>
             </div>
-            <!-- Texto del hero comentado temporalmente
-            <div class="container">
-                <h1>ARTE FLORAL QUE TRANSFORMA ESPACIOS</h1>
-            </div>
-            -->
+
         </section>
 
         <section class="intro section fade-in">
@@ -145,29 +139,7 @@ const projects = [
         opacity: 0.95;
     }
 
-    .project-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 80px;
-    }
 
-    .project-item {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 24px;
-        align-items: center;
-    }
-
-    @media (min-width: 769px) {
-        .project-list {
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-        }
-
-        .project-item-wrapper:nth-child(even) .project-image {
-            order: 2;
-        }
-    }
 
     .project-image img {
         width: 100%;
